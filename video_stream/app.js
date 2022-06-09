@@ -2,7 +2,10 @@ const express = require("express");
 const app = express();
 const fs = require("fs");
 const PORT = process.env.PORT || 8080;
+const cors = require('cors');
 const path = require("path");
+
+app.use(cors());
 
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/index.html");  
